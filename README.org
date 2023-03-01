@@ -1,0 +1,14 @@
+* ~SortedSeq~ - an always sorted ~seq[T]~
+
+A trivial ~SortedSeq[T] = distinct seq[T]~ type is provided, which
+assures that the content of the sequence remains sorted upon pushing
+new elements into it (and thus assures the flat physical memory remains in
+the correct order). The sorting rules obey the order decided by the
+type ~T~ contained.
+
+For obvious reasons it does not provide a ~[]=~ write accessor.
+
+Adding new elements is performed using ~push~ and a ~[]~ read accessor
+is available. Otherwise a ~toSortedSeq~ helper similar to ~toSeq~ is
+available and ~initSortedSeq~ allows pre-allocation via ~newSeqOfCap~
+using the ~len~ argument.
