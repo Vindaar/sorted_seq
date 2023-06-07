@@ -1,0 +1,2 @@
+* v0.1.0
+- sorted sequence such that last element is the smallest for a fast ~pop~
