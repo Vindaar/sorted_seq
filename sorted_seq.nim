@@ -43,11 +43,11 @@ proc pop*[T](ss: var SortedSeq[T]): T =
   ss.setLen(ss.high)
 
 iterator items*[T](ss: SortedSeq[T]): T =
-  for d in items(ss):
+  for d in items(distinctBase(ss)):
     yield d
 
 iterator pairs*[T](ss: SortedSeq[T]): (int, T) =
-  for i, d in pairs(ss):
+  for i, d in pairs(distinctBase(ss)):
     yield (i, d)
 
 proc `$`*[T](ss: SortedSeq[T]): string = $(distinctBase(ss))
